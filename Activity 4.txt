@@ -1,0 +1,136 @@
+array = [1,2,3,4,5]
+sum = 0
+for i in range(len(array)):
+    sum = sum + array[i]
+print(sum)
+
+
+
+
+array = [1,2,3,4,5]
+max = arr[0]
+for i in range(len(array)):
+    if arr[i]>max:
+        max = arr[i]
+print(max)
+
+
+
+#Function to left rotate arr[] of size n by d*/
+def leftRotate(arr, d, n):
+	for i in range(d):
+		leftRotatebyOne(arr, n)
+
+#Function to left Rotate arr[] of size n by 1*/
+def leftRotatebyOne(arr, n):
+	temp = arr[0]
+	for i in range(n-1):
+		arr[i] = arr[i+1]
+	arr[n-1] = temp
+		
+
+# utility function to print an array */
+def printArray(arr,size):
+	for i in range(size):
+		print ("%d"% arr[i],end=" ")
+
+
+# Driver program to test above functions */
+arr = [1, 2, 3, 4, 5, 6, 7]
+leftRotate(arr, 2, 7)
+printArray(arr, 7)
+
+
+
+def reverseArray(arr, start, end):
+    while (start < end):
+        temp=arr[start]
+        arr[start]=arr[end]
+        arr[end]=temp
+        start=start+1
+        end=end-1
+  
+def Rotate(a, d):
+    if d == 0:
+        return
+    n = len(a)
+    d = d % n
+    reverseArray(a, 0, d-1)
+    reverseArray(a, d, n-1)
+    reverseArray(a, 0, n-1)
+  
+def printArray(arr):
+    for i in range(0, len(arr)):
+        print(arr[i],end=" ")
+  
+a= [10, 20, 13, 24, 53, 6, 17]
+n = len(a)
+d = 2
+printArray(a)  
+Rotate(a, d)
+print("\nShifted array: ")  
+printArray(a)
+
+
+
+
+def rotateArray(a,d):
+    temp = []
+    n=len(a)
+    for i in range(d,n):
+        temp.append(a[i])
+    i = 0
+    for i in range (0,d):
+        temp.append(a[i])
+    a=temp.copy()
+    return a
+ 
+arr = [1, 2, 3, 4, 5, 6, 7]
+print("Array after left rotation is: ", end=' ')
+print(rotateArray(arr, 2))
+
+
+
+# List slicing approch to rotate the array
+def rotateArray(a,d):
+    n=len(a)
+    a[:]=a[d:n]+a[0:d]
+    return a
+
+arr = [1, 2, 3, 4, 5, 6]
+
+print("Rotated list is")
+print(rotateArray(arr,2)) 
+
+
+def SplitArray(arr, n, k):
+	for i in range(0, k):
+		x = arr[0]
+		for j in range(0, n-1):
+			arr[j] = arr[j + 1]
+		
+		arr[n-1] = x		
+arr = [15, 40, 15, 16, 50, 36]
+n = len(arr)
+position = 2
+SplitArray(arr, n, position)
+for i in range(0, n):
+	print(arr[i], end = ' ')
+
+
+def remainder(arr,length,k):
+    multi = 1
+    for i in range(0,length):
+        multi = (multi * (arr[i] % k)) % k
+    return multi % k
+arr = [101, 1, 5, 2]
+length = len(arr)
+k = 3
+print("Output is ", remainder(arr, length, k))
+
+
+def check_monotone(arr):
+#Return True if it follows monotonic condition
+    return (all(arr[i] <= arr[i+1] for i in range(len(arr) - 1)) or all(arr[i] >= arr[i+1] for i in range(len(arr) - 1)))
+arr = [3, 5, 7, 19]
+print("The given array is monotonic ? True/False:",check_monotone(arr))

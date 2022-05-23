@@ -1,0 +1,289 @@
+num=3
+if num<0:
+    print("Negative")
+elif num>0:
+    print("positive")
+elif num==0:
+    print("Num is equal to zero")
+
+Number = 9
+if Number%2==0:
+    print("Even")
+else:
+    print("Odd")
+
+year = 2020
+if year%400==0 and year%100==0:
+    print("Leap year")
+elif year%4==0 and year%100!=0:
+    print("is a leap year")
+else:
+    print("not a leap year")
+
+a=5
+b=6
+c=7
+if a>b and a>c:
+    print("a is greater")
+elif b>a and b>c:
+    print("b is greater")
+else:
+    print("c is greater")
+
+
+number = 5
+if number>1:
+    for i in range(2,number):
+        if number%i==0:
+            print(number,"is not a prime number")
+            break
+    else:
+        print(number,"is a prime number")
+else:
+    print(number,"is not a prime number")
+
+
+num1=100
+num2=200
+for num in range(num1,num2+1):
+    if num>1:
+        for i in range(2,num):
+            if num%i==0:
+                break
+        else:
+            print(num)   
+
+
+num=3
+factorial=1
+if num==0:
+    print("The factorial of 0 is 1")
+elif num<0:
+    print("Factorial doesnt exist for negative numbers")
+else:
+    for i in range(1,num+1):
+        factorial=factorial*i
+        print(factorial)
+
+
+a=15
+for i in range(1,a+1):
+    print(a, 'x', i, '=', a*i)
+
+
+n= int(input("Enter a number: "))
+n1=0
+n2=1
+i=0
+if n<=0:
+    print("Enter a positive number!")
+elif n==1:
+    print("Fibonacci sequence upto",n,":")
+    print(n1)
+else:
+    print("Fibonacci sequence:")
+    for i in range(n):
+        print(n1)
+        sum = n1+n2
+        n1 = n2
+        n2 = sum
+        i+=1
+
+
+#Armstrong number in an interval
+lower = 56
+upper = 1000
+for number in range(lower,upper+1):
+    order = len(str(number))
+    sum = 0
+    temp = number
+    while temp>0:
+        n = temp % 10
+        sum+= n**order
+        temp = temp//10
+    if number == sum:
+        print(number)
+
+
+#Armstrong number
+number = int(input("Enter a number: "))
+sum = 0
+temp = number
+while temp>0:
+    n = temp % 10
+    sum+= n**3
+    temp = temp//10
+if number == sum:
+    print(number,"is a armstrong number")
+else:
+    print(number,"is not a armstrong number")
+    
+
+#sum of natural numbers
+n = 5
+if n<0:
+    print("Enter a positive number:")
+else:
+    sum = 0
+    while n>0:
+        sum+=n
+        n-=1
+    print("The sum of natural number is : ",sum)
+
+
+rows = int(input("enter number of rows:"))
+for i in range(rows):
+    for j in range(i+1):
+        print(j+1, end=" ")
+    print("\n")
+
+
+rows = int(input("enter number of rows:"))
+for i in range(rows):
+    for j in range(i+1):
+        print("* ", end="")
+    print("\n")
+
+rows = int(input("enter number of rows:"))
+ascii_value = 65
+for i in range(rows):
+    for j in range(i+1):
+        alphabet = chr(ascii_value)
+        print(alphabet, end=" ")
+    ascii_value+=1
+    print("\n")
+
+
+rows = int(input("enter number of rows:"))
+for i in range(rows,0,-1):
+    for j in range(0,i):
+        print(j+1, end=" ")
+    print("\n")
+
+
+rows = int(input("enter number of rows:"))
+for i in range(rows,0,-1):
+    for j in range(0,i):
+        print("* ", end="")
+    print("\n")
+
+
+rows = int(input("enter number of rows:"))
+ascii_value = 65
+for i in range(rows,0,-1):
+    for j in range(0,i):
+        alphabet = chr(ascii_value)
+        print(alphabet, end=" ")
+    ascii_value+=1
+    print("\n")
+
+
+rows = int(input("enter number of rows:"))
+for i in range(rows,0,-1):
+    for j in range(1,i+1):
+        print(j, end=" ")
+        
+    print("\n")
+
+
+rows = int(input("Enter number of rows: "))
+
+k = 0
+
+for i in range(1, rows+1):
+    for space in range(1, (rows-i)+1):
+        print(end="  ")
+        
+    while k!=(2*i-1):
+        print("* ", end="")
+        k += 1
+   
+    k = 0
+    print()
+
+
+rows = int(input("Enter the number of rows:"))
+
+for i in range(rows, 1 ,-1):
+    for space in range(0, rows-i):
+        print("  ", end="")
+    for j in range(i, 2*i-1):
+        print("* ",end="")
+    for j in range(1, i-1):
+        print("* ", end="")
+    print()
+        
+
+
+rows = int(input("Enter number of rows:"))
+k=0
+count=0
+count1=0
+for i in range(1,rows+1):
+    for space in range(1,(rows-i)+1):
+        print("  ",end="")
+        count+=1
+    while k!=((2*i)-1):
+        if count<=rows-1:
+            print(i+k,end=" ")
+            count+=1
+        else:
+            count1+=1
+            print(i+k-(2*count1), end=" ")
+        k += 1
+    
+    count1 = count = k = 0
+    print()
+
+
+#floyds triangle
+rows=int(input("Enter number of rows:"))
+number=1
+for i in range(1,rows+1):
+    for j in range(1,i+1):
+        print(number,end=" ")
+        number+=1
+    print()
+
+
+rows = int(input("Enter number of rows: "))
+coef = 1
+
+for i in range(1, rows+1):
+    for space in range(1, rows-i+1):
+        print(" ",end="")
+    for j in range(0, i):
+        if j==0 or i==0:
+            coef = 1
+        else:
+            coef = coef * (i - j)//j
+        print(coef, end = " ")
+    print()
+
+
+
+
+dict={'1':'Manasha','2':'Sunitha','3':'Monith'}
+for key in dict:
+    print(key,dict[key])
+
+num=12345
+reversed_num=0
+while num!=0:
+    digit = num%10
+    reversed_num=reversed_num*10+digit
+    num//=10
+print("reversed number: ",str(reversed_num))
+
+
+
+base = 2
+exponent = 5
+result = 1
+while exponent!=0:
+    result = result*base
+    exponent = exponent - 1
+print("Answer = ", str(result))
+
+
+
